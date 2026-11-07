@@ -1,0 +1,23 @@
+[package]
+name = "fs_sim"
+version = "0.3.0"
+edition = "2024"
+license = "0BSD"
+
+[dependencies]
+fs_api = { path = "fs_api" }
+fs_gui = { path = "fs_gui" }
+fat = { path = "file_systems/fat" }
+minix =  { path = "file_systems/minix" }
+
+[workspace]
+resolver = "3"
+members = ["fs_api", "fs_gui", "file_systems/fat", "file_systems/minix"]
+
+# The shipping target is wasm, where size matters more than speed: the simulator
+# walks structures of tens of thousands of blocks, it is not a number cruncher.
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+strip = true

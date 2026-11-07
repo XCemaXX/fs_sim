@@ -1,0 +1,10 @@
+[package]
+name = "minix"
+version = "0.0.0"
+edition = "2024"
+
+[dependencies]
+fs_api = { path = "../../fs_api" }
+
+[dev-dependencies]
+fs_api = { path = "../../fs_api", features = ["test-util"] }

@@ -1,0 +1,12 @@
+[package]
+name = "fat"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+fs_api = { path = "../../fs_api" }
+
+[dev-dependencies]
+# Conformance harness only for tests, never in the normal build.
+fs_api = { path = "../../fs_api", features = ["test-util"] }
+proptest = "1"

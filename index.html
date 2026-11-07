@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>fs_sim — filesystem simulator</title>
+    <style>
+      html, body { margin: 0; height: 100%; background: #353535; }
+      /* display:block — otherwise the canvas inline baseline adds a permanent scrollbar */
+      canvas { display: block; width: 100%; height: 100%; }
+    </style>
+    <!-- all-features: rustc emits bulk-memory and trunc_sat, which wasm-opt 123
+         rejects by default and fails the build. -->
+    <link data-trunk rel="rust" data-wasm-opt="z" data-wasm-opt-params="--all-features" />
+  </head>
+  <body>
+    <canvas id="the_canvas_id"></canvas>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+[build]
+target = "index.html"
+dist = "dist"
+release = true
+
+# Pinned so CI and local builds run the same optimizer as index.html expects.
+[tools]
+wasm_opt = "version_123"
